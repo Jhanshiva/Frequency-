@@ -1,0 +1,35 @@
+nclude <stdio.h>
+
+int main() {
+    int a[20],fr[20],n,j,i,c;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+        fr[i]=-1;
+    }
+    for(i=0;i<n;i++)
+    {
+        c=1;
+        for(j=i+1;j<n;j++)
+        {
+            if(a[i]==a[j])
+            {
+                c++;
+                fr[j]=0;
+            }
+        }
+        if(fr[i]!=0)
+        {
+            fr[i]=c;
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        if(fr[i]!=0)
+        {
+            printf("%d-%d times\n",a[i],fr[i]);
+        }
+    }
+    return 0;
+}
